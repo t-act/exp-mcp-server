@@ -8,10 +8,10 @@ from openai import OpenAI
 
 async def main():
     # サーバープロセスを起動してstdio接続
-    exp_code = "mcp_server_1"
+    exp_code = "mcp_server_1"   # 検証toolsを選択
     server_params = StdioServerParameters(
-        command="/Users/tact/Dev/mcp-server-sample/.venv/bin/python",
-        args=[f"/Users/tact/Dev/mcp-server-sample/{exp_code}.py"],
+        command=".venv/bin/python",
+        args=[f"src/{exp_code}.py"],
     )
     
     async with stdio_client(server_params) as (read, write):
